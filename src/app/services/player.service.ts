@@ -20,6 +20,10 @@ export class PlayerService {
         });
     }
 
+    getPlayer(playerId: string): Player | undefined {
+        return this.players.find((player: Player)=> player._id === playerId);
+    }
+
     private sortPlayers(playerA: Player, playerB: Player): number {
         if (!playerA.totalTime || !playerB.totalTime){
             return 0;

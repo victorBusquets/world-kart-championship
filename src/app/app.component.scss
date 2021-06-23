@@ -1,0 +1,21 @@
+$header-size: 42px;
+
+app-header{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: $header-size;
+    background: gainsboro;
+    border-bottom: solid 1px;
+}
+
+main{
+    position: fixed;
+    top: $header-size;
+    left: 0;
+    width: 100%;
+    height: calc(100% - #{$header-size});
+    overflow-y: auto;
+}

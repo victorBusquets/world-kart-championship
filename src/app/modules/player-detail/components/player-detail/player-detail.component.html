@@ -1,1 +1,10 @@
-<div>Player detail here</div>
+<div class="page-spacing">
+    <ng-container *ngIf="player">
+        <img [src]="player.picture" [alt]="player.name">
+        <p class="m-0">{{player.name}}</p>
+        
+        <div class="mt-4">
+            {{player | json}}
+        </div>
+    </ng-container>
+</div>
