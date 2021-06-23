@@ -1,7 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { APP_ROUTES, APP_ROUTE_IDS } from './constants';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: APP_ROUTES.main,
+    loadChildren: () =>
+      import(
+        'src/app/modules/results/results.module'
+      ).then((module) => module.ResultsModule)	
+  }, 
+  {
+    path: APP_ROUTES.results,
+    loadChildren: () =>
+      import(
+        'src/app/modules/results/results.module'
+      ).then((module) => module.ResultsModule)	
+  },
+  {
+    path: APP_ROUTES.detail + '/' + APP_ROUTE_IDS.playerId,
+    loadChildren: () =>
+      import(
+        'src/app/modules/player-detail/player-detail.module'
+      ).then((module) => module.PlayerDetailModule)	
+  },
+  {
+		path: '**',
+		pathMatch: 'full',
+		redirectTo: APP_ROUTES.main
+	}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
