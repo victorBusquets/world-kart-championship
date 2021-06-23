@@ -1,8 +1,9 @@
 <div class="page-spacing">
     <div class="grid-container results">
-        <div *ngFor="let player of players" class="column-4 results__player" (click)="goToPlayerDetail(player._id)">
-            <img [src]="player.picture" [alt]="player.name">
-            <p class="m-0">{{player.name}}</p>
-        </div>
+        <app-player *ngFor="let player of players; let i = index"
+            class="column-2 column-md-5 column-xs-10 results__player"
+            [ranking]="i+1"
+            [bestTime]="bestTime"
+            [player]="player"></app-player>
     </div>
 </div>

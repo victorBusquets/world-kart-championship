@@ -1,11 +1,20 @@
 @import './styles/variables.scss';
-@import './styles/basic.scss';
+@import './styles/grid.scss';
 @import './styles/spacing.scss';
 
 body{
     margin: 0;
+    font-family: monospace;
+
+    *{
+        font-family: monospace;
+    }
 }
 
 .page-spacing{
     padding: 20px 10px;
+}
+
+.d-block{
+    display: block;
 }

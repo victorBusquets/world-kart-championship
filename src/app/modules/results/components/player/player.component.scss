@@ -1,0 +1,37 @@
+.player{
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 5px;
+    background: #f8f8ff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: solid 1px #f8f8ff;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    transition: all .2s;
+
+    &:hover{
+        box-shadow: 0px 0px 10px -2px rgb(0 0 0 / 75%);
+        border: solid 1px #949494;
+    }
+
+    .player__time-diferences{
+        color: red;
+
+        &.player__time-diferences--hidden{
+            visibility: hidden;
+        }
+    }
+
+    &.player__picture{
+        height: 64px;
+        width: 64px;
+    }
+
+    .player__app-ranking{
+        margin: auto 0;
+    }
+
+    .player__name{
+        font-size: 15px;
+    }
+}

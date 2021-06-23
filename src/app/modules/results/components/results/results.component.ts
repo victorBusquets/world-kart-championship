@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { APP_ROUTES } from 'src/app/constants';
 import { Player } from 'src/app/models';
 import { PlayerService } from 'src/app/services/player.service';
 
@@ -11,12 +9,10 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class ResultsComponent {
 	players: Player[];
+	bestTime: number;
 
-	constructor(private router: Router, private playerService: PlayerService) {
+	constructor(private playerService: PlayerService) {
 		this.players = this.playerService.getPlayers();
-	}
-
-	goToPlayerDetail(playerId: string): void {
-		this.router.navigate(['/', APP_ROUTES.detail, playerId]);
+		this.bestTime = this.players[0].totalTime || 0;
 	}
 }

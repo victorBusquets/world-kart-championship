@@ -1,4 +1,4 @@
-$header-size: 42px;
+@import '../styles/variables.scss';
 
 app-header{
     position: fixed;
@@ -18,4 +18,9 @@ main{
     width: 100%;
     height: calc(100% - #{$header-size});
     overflow-y: auto;
+
+    .router-outlet{
+        max-width: $resolution-limit;
+        margin: 0 auto;
+    }
 }
