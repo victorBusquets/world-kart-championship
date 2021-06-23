@@ -1,0 +1,91 @@
+@import './media-queries.scss';
+
+@mixin generateColumns($size-name) {
+    @for $i from 1 through $number-of-columns {
+        .column-#{$size-name}-#{$i} {
+            grid-column: span $i;
+        }
+
+        .display-none-#{$size-name}{
+            display: none;
+        }
+
+        .display-#{$size-name}{
+            display: inline-block;
+        }    
+    }
+}
+
+// Generate grid system
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat($number-of-columns, 1fr);
+    grid-gap: 20px;
+    padding: 0 15px;
+
+    &.no-spacing{
+        padding: 0;
+        grid-gap: 0px;
+    }
+    
+    .grid-auto{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    @for $i from 1 through $number-of-columns {
+        .column-#{$i} {
+            grid-column: span $i;
+        }
+    }
+
+    @include for-tablet-landscape{
+        @include generateColumns('md');
+    }
+    
+    @include for-tablet-portrait{
+        @include generateColumns('sm');
+    }
+    
+    @include for-phone{
+        @include generateColumns('xs');
+    }
+}
+
+// Generate padding levels
+@for $i from 1 through $spacing-levels {
+    .p-#{$i} {
+        padding-top: #{$i * $padding-size} !important;
+        padding-bottom: #{$i * $padding-size} !important;
+        padding-left: #{$i * $padding-size} !important;
+        padding-right: #{$i * $padding-size} !important;
+    }
+    
+    .px-#{$i} {
+        padding-left: #{$i * $padding-size} !important;
+        padding-right: #{$i * $padding-size} !important;
+    }
+
+    .py-#{$i} {
+        padding-top: #{$i * $padding-size} !important;
+        padding-bottom: #{$i * $padding-size} !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$i * $padding-size} !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: #{$i * $padding-size} !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: #{$i * $padding-size} !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$i * $padding-size} !important;
+    }
+}
