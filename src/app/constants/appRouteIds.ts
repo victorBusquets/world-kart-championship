@@ -1,3 +1,4 @@
 export const APP_ROUTE_IDS = {
-    playerId: ':playerId'
+    playerId: ':playerId',
+    interval: ':interval'
 }

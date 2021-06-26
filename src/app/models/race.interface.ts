@@ -1,5 +1,4 @@
-export interface Race {
+export interface RaceInterface {
     name: string;
     time: string;
-    timeInSeconds?: number;
 }

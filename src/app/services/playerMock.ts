@@ -1,6 +1,6 @@
-import { Player } from "../models";
+import { PlayerInterface } from "../models";
 
-export const PLAYER_MOCK: Player[] = [
+export const PLAYER_MOCK: PlayerInterface[] = [
     {
       "_id": "5f3a3c5faa55d5c4ea549ac1",
       "picture": "http://placehold.it/64x64",

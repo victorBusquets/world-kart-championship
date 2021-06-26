@@ -9,26 +9,33 @@
     border: 5px solid;
     font-weight: bold;
     font-size: 18px;
+
+    &.ranking--small{
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 16px;
+    }
     
-    &.gold{
+    &.ranking--gold{
         color: #ffe68f;
         background: #e58d1c;
 
     }
 
-    &.silver{
+    &.ranking--silver{
         color: #eef1ef;
         background: #babfbf;
     }
 
 
-    &.bronze{
+    &.ranking--bronze{
         color: #ffb67f;
         background: #c1512c;
     }
 
-    &.default{
-        border: unset;
+    &.ranking--default{
+        border-color: white;
         box-shadow: unset;
     }
 }

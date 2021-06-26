@@ -1,0 +1,11 @@
+<h3>{{raceTitle}}:</h3>
+<div class="grid-container">
+    <div *ngFor="let player of players; let i = index" class="column-6 text-center">
+        <app-ranking class="d-inline-block mr-2" [smallMode]="true" [ranking]="i+1"></app-ranking>
+        <img style="width: 35px;" [src]="player.picture" [alt]="player.name">
+        <span class="d-inline-block" style="width: 200px;">{{player.name}}</span>
+
+        <app-time-difference class="d-inline-block" style="width: 200px;" [bestTime]="bestTimeInSeconds"
+            [playerTime]="player.races[raceKey].timeInSeconds"></app-time-difference>
+    </div>
+</div>

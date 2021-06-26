@@ -1,0 +1,11 @@
+.player-time, .time-difference{
+    font-weight: bold;
+}
+
+.time-difference{
+    color: red;
+
+    &.time-difference--hidden{
+        visibility: hidden;
+    }
+}

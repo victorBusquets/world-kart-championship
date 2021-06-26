@@ -18,6 +18,20 @@ const routes: Routes = [
       ).then((module) => module.ResultsModule)	
   },
   {
+    path: APP_ROUTES.summaryRanking,
+    loadChildren: () =>
+      import(
+        'src/app/modules/summary-ranking/summary-ranking.module'
+      ).then((module) => module.SummaryRankingModule)	
+  },
+  {
+    path: APP_ROUTES.summaryRanking + '/' + APP_ROUTE_IDS.interval,
+    loadChildren: () =>
+      import(
+        'src/app/modules/summary-ranking/summary-ranking.module'
+      ).then((module) => module.SummaryRankingModule)	
+  },
+  {
     path: APP_ROUTES.detail + '/' + APP_ROUTE_IDS.playerId,
     loadChildren: () =>
       import(

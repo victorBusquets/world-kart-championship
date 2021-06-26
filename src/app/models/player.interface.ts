@@ -1,12 +1,10 @@
-import { Race } from "./race.interface";
+import { RaceInterface } from "./race.interface";
 
-export interface Player {
+export interface PlayerInterface {
     _id: string;
     picture: string;
     age: number;
     name: string;
     team: string;
-    races: Race[];
-    totalTime?: number;
+    races: RaceInterface[];
 }
-

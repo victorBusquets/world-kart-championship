@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class RankingComponent {
 	@Input() ranking!: number;
+	@Input() smallMode: boolean = false;
 }

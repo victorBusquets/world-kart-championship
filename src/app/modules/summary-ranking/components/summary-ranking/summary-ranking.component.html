@@ -1,0 +1,15 @@
+<div class="page-spacing">
+
+    <h3>Clasificacion global:</h3>
+    <div class="grid-container mb-3">
+        <div class="column-4 text-center" *ngFor="let player of globalRankingInfo; let i = index">
+            <app-ranking [ranking]="i+1"></app-ranking>
+            <p class="mb-1">{{player.name}}</p>
+            <app-time-difference [bestTime]="globalRankingBestTimeInSeconds"
+                [playerTime]="player.races[globalRankingKey].timeInSeconds"></app-time-difference>
+        </div>
+    </div>
+
+    <app-summary-race-slider></app-summary-race-slider>
+
+</div>
