@@ -9,7 +9,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 	styleUrls: ['./summary-race-slider.component.scss']
 })
 export class SummaryRaceSliderComponent implements OnDestroy {
-	intervalTime: number = 10;
+	intervalTime: number = 100000;
 	raceList: {raceName: string, raceKey: string}[];
 	currentRaceIndex: number = 0;
 	currentRaceKey: string = '';

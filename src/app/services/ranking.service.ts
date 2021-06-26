@@ -13,6 +13,8 @@ export class RankingService {
     constructor() {
         this.players = PLAYER_MOCK.map((player: PlayerInterface)=> new Player(player));
         this.raceList = this.getRaceListNames();
+
+        console.log(...new Set(this.players.map((player)=>player.team)))
     }
 
     getRaceList(): {raceName: string, raceKey: string}[] {

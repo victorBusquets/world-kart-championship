@@ -5,6 +5,8 @@
         <div class="column-4 text-center" *ngFor="let player of globalRankingInfo; let i = index">
             <app-ranking [ranking]="i+1"></app-ranking>
             <p class="mb-1">{{player.name}}</p>
+            <app-team-logo [team]="player.team"></app-team-logo>
+
             <app-time-difference [bestTime]="globalRankingBestTimeInSeconds"
                 [playerTime]="player.races[globalRankingKey].timeInSeconds"></app-time-difference>
         </div>

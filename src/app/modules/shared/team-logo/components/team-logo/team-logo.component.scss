@@ -1,0 +1,41 @@
+.team-logo{
+    line-height: 20px;
+
+    &:before{
+        width: 30px;
+        height: 20px;
+        display: inline-block;
+        box-shadow: 0px 0px 3px 0px #000000;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0px 0px 5px black;
+        font-size: 16px;
+        line-height: 17px;
+    }
+
+    &.team-euron:before{
+        content: 'E';
+        background: red;
+    }
+    &.team-vendblend:before{
+        content: 'V';
+        background: blue;
+    }
+    &.team-genesynk:before{
+        content: 'G';
+        background: greenyellow;
+
+    }
+    &.team-uxmox:before{
+        content: 'U';
+        background: #f367f3;
+    }
+    &.team-devaway:before{
+        content: 'D';
+        background: #fecd74;
+    }
+    &.team-confrenzy:before{
+        content: 'C';
+        background: #eff15c;
+    }
+}
