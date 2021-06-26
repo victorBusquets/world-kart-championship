@@ -2,17 +2,25 @@
 
 @mixin generateColumns($size-name) {
     @for $i from 1 through $number-of-columns {
+        .column{
+            grid-column: span 1;
+        }
+
         .column-#{$size-name}-#{$i} {
             grid-column: span $i;
         }
+    }
+}
 
-        .display-none-#{$size-name}{
+@mixin generateDisplayModes($size-name) {
+    @for $i from 1 through $number-of-columns {
+        .d#{$size-name}-none{
             display: none;
         }
 
-        .display-#{$size-name}{
+        .d#{$size-name}-inline{
             display: inline-block;
-        }    
+        }
     }
 }
 
@@ -36,6 +44,10 @@
     }
 
     @for $i from 1 through $number-of-columns {
+        .column{
+            grid-column: span 1;
+        }
+        
         .column-#{$i} {
             grid-column: span $i;
         }
@@ -52,4 +64,18 @@
     @include for-phone{
         @include generateColumns('xs');
     }
+}
+
+@include generateDisplayModes('');
+
+@include for-tablet-landscape{
+    @include generateDisplayModes('-md');
+}
+
+@include for-tablet-portrait{
+    @include generateDisplayModes('-sm');
+}
+
+@include for-phone{
+    @include generateDisplayModes('-xs');
 }
