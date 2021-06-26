@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { APP_ROUTES } from 'src/app/constants';
 
 @Component({
 	selector: 'app-header',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-	title = 'World kart championship!';
+	appRoutes = APP_ROUTES;
+	menuOpen!: boolean;
 }

@@ -1,14 +1,26 @@
 <div class="page-spacing py-2 header">
-    <div class="resolution-limiter">    
-        <div class="header__logo px-3 d-inline-block" [routerLink]="['/']"
+    <div class="resolution-limiter header__content">
+        <div class="header__content__logo px-3 d-inline-block" [routerLink]="['/']"
             [routerLinkActiveOptions]="{exact:true}"    
-            [routerLinkActive]="'header__logo--active-route'">
+            [routerLinkActive]="'header__content__logo--active-route'">
             
-            <img class="header__logo__image d-inline-block" src="./assets/logo.png" alt="logo">
-            <h1 class="pl-2 m-0 header__logo__title d-inline-block">
-                {{title}}
-                <div class="header__logo__title__line"></div>
-            </h1>
+            <img class="header__content__logo__image d-inline-block" src="./assets/logo.png" alt="logo">
+            <h1 class="pl-2 m-0 header__content__logo__title d-inline-block">World kart championship!</h1>
+        </div>
+        <div class="d-sm-none">
+            <a class="header__content__link mx-2"
+                [routerLink]="['/']"
+                [routerLinkActiveOptions]="{exact:true}"    
+                [routerLinkActive]="'header__content__link--active-route'">Inicio</a>
+            <a class="header__content__link mx-2"
+                [routerLink]="['/', appRoutes.summaryRanking]"
+                [routerLinkActiveOptions]="{exact:true}"    
+                [routerLinkActive]="'header__content__link--active-route'">Resumen clasificación</a>
+        </div>
+        <div class="d-none d-sm-inline header__content__menu" [ngClass]="{'header__content__menu--open': menuOpen}" (click)="menuOpen = !menuOpen">
+			<div class="header__content__menu__line header__content__menu__line--first"></div>
+			<div class="header__content__menu__line header__content__menu__line--middle"></div>
+			<div class="header__content__menu__line header__content__menu__line--last"></div>
         </div>
     </div>
 </div>
