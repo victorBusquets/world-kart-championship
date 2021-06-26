@@ -6,6 +6,6 @@
         </div>
     </div>
     <p class="m-0 mb-1 player__name">{{player.name}}</p>
-    <p class="m-0">{{player.team}}</p>
+    <app-team-logo class="d-inline-block my-2" [team]="player.team"></app-team-logo>
     <app-time-difference [bestTime]="bestTime" [playerTime]="playerTimeInSeconds"></app-time-difference>
 </div>

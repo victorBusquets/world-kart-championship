@@ -2,7 +2,8 @@
     <ng-container *ngIf="player">
         <img [src]="player.picture" [alt]="player.name">
         <p class="m-0">{{player.name}}</p>
-        
+        <app-team-logo class="d-inline-block my-3" [team]="player.team"></app-team-logo>
+
         <div class="mt-4">
             {{player | json}}
         </div>
