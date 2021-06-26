@@ -7,16 +7,9 @@ const routes: Routes = [
     path: APP_ROUTES.main,
     loadChildren: () =>
       import(
-        'src/app/modules/results/results.module'
-      ).then((module) => module.ResultsModule)	
+        'src/app/modules/global-ranking/global-ranking.module'
+      ).then((module) => module.GlobalRankingModule)	
   }, 
-  {
-    path: APP_ROUTES.results,
-    loadChildren: () =>
-      import(
-        'src/app/modules/results/results.module'
-      ).then((module) => module.ResultsModule)	
-  },
   {
     path: APP_ROUTES.summaryRanking,
     loadChildren: () =>

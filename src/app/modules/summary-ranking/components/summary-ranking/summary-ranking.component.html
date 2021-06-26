@@ -1,6 +1,6 @@
 <div class="page-spacing">
+    <app-title [title]="globalRankingTitle"></app-title>
 
-    <h3>Clasificacion global:</h3>
     <div class="grid-container mb-3">
         <div class="column-4 text-center" *ngFor="let player of globalRankingInfo; let i = index">
             <app-ranking [ranking]="i+1"></app-ranking>

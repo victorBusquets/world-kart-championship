@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ResultsComponent } from './components/results/results.component';
+import { GlobalRankingComponent } from './components/global-ranking/global-ranking.component';
 
 const ROUTES: Routes = [
 	{
 		path: '',
-		component: ResultsComponent
+		component: GlobalRankingComponent
 	}
 ];
 
@@ -13,4 +13,4 @@ const ROUTES: Routes = [
 	imports: [RouterModule.forChild(ROUTES)],
 	exports: [RouterModule]
 })
-export class ResultsRoutingModule {}
+export class GlobalRankingRoutingModule {}

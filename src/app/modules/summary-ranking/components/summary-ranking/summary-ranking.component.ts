@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GLOBAL_RANKING_KEY } from 'src/app/constants';
+import { GLOBAL_RANKING_KEY, GLOBAL_RANKING_NAME } from 'src/app/constants';
 import { Player } from 'src/app/models';
 import { RankingService } from 'src/app/services/ranking.service';
 
@@ -9,6 +9,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 	styleUrls: ['./summary-ranking.component.scss']
 })
 export class SummaryRankingComponent {
+	globalRankingTitle: string = GLOBAL_RANKING_NAME;
 	globalRankingKey: string = GLOBAL_RANKING_KEY;
 	globalRankingInfo: Player[];
 	globalRankingBestTimeInSeconds: number;

@@ -5,6 +5,7 @@
 body{
     margin: 0;
     font-family: monospace;
+    position:relative;
 
     *{
         font-family: monospace;
@@ -13,6 +14,11 @@ body{
 
 .page-spacing{
     padding: 20px 10px;
+}
+
+.resolution-limiter{
+    max-width: $resolution-limit;
+    margin: 0 auto;
 }
 
 .d-block{

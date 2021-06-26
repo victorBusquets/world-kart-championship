@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ResultsComponent } from './results.component';
+import { GlobalRankingComponent } from './global-ranking.component';
 
-describe('ResultsComponent', () => {
-	let component: ResultsComponent;
-	let fixture: ComponentFixture<ResultsComponent>;
+describe('GlobalRankingComponent', () => {
+	let component: GlobalRankingComponent;
+	let fixture: ComponentFixture<GlobalRankingComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ResultsComponent]
+			declarations: [GlobalRankingComponent]
 		}).compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ResultsComponent);
+		fixture = TestBed.createComponent(GlobalRankingComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

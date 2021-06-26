@@ -1,9 +1,14 @@
 <div class="page-spacing py-2 header">
-    <div class="header__logo" [routerLink]="['/']">
-        <img class="header__logo__image" src="./assets/logo.png" alt="logo">
-        <h1 class="pl-2 m-0 header__logo__title">
-            {{title}}
-            <div class="header__logo__title__line"></div>
-        </h1>
+    <div class="resolution-limiter">    
+        <div class="header__logo px-3 d-inline-block" [routerLink]="['/']"
+            [routerLinkActiveOptions]="{exact:true}"    
+            [routerLinkActive]="'header__logo--active-route'">
+            
+            <img class="header__logo__image d-inline-block" src="./assets/logo.png" alt="logo">
+            <h1 class="pl-2 m-0 header__logo__title d-inline-block">
+                {{title}}
+                <div class="header__logo__title__line"></div>
+            </h1>
+        </div>
     </div>
 </div>

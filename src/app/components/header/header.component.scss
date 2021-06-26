@@ -1,14 +1,33 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/media-queries.scss';
 
 .header{
-    max-width: $resolution-limit;
-    margin: 0 auto;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: $header-size;
+    background: gainsboro;
+    border-bottom: solid 1px;
+    box-sizing: border-box;
+    
 
     .header__logo{
         cursor: pointer;
-        display: flex;
-
         
+        @include for-phone{
+            padding: 0 !important;
+        }
+
+        &.header__logo--active-route{
+            .header__logo__title{
+                .header__logo__title__line{
+                    width: 100%;
+                }
+            }
+        }
+
         &:hover{
             .header__logo__title{
                 .header__logo__title__line{
@@ -24,7 +43,6 @@
         .header__logo__title{
             line-height: 25px;
             font-size: 18px;
-            display: inline-block;
             position: relative;
 
             .header__logo__title__line{

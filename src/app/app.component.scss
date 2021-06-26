@@ -1,15 +1,5 @@
 @import '../styles/variables.scss';
 
-app-header{
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: $header-size;
-    background: gainsboro;
-    border-bottom: solid 1px;
-}
 
 main{
     position: fixed;
@@ -18,9 +8,4 @@ main{
     width: 100%;
     height: calc(100% - #{$header-size});
     overflow-y: auto;
-
-    .router-outlet{
-        max-width: $resolution-limit;
-        margin: 0 auto;
-    }
 }
