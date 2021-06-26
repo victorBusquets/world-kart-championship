@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TeamLogoComponent {
 	@Input() team!: string;
-	@Input() onlyShowIcon: boolean = false;
+	@Input() onlyShowIcon!: boolean;
 	teamClassName: string = '';
 
 	ngOnInit(): void{

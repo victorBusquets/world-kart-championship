@@ -1,3 +1,5 @@
+@import '../../../../../../styles/media-queries.scss';
+
 .player{
     cursor: pointer;
     padding: 10px 5px;
@@ -11,6 +13,12 @@
     &:hover{
         box-shadow: 0px 0px 10px -2px rgb(0 0 0 / 75%);
         border: solid 1px #949494;
+    }
+
+    &.player--detail-mode:hover{
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        border: solid 1px #f8f8ff;
+        cursor: initial;
     }
 
     .player__time-diferences{
@@ -32,5 +40,12 @@
 
     .player__name{
         font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@include for-phone{
+    app-team-logo, app-time-difference{
+        margin-top: 0 !important;        
     }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { GLOBAL_RANKING_KEY } from "../constants";
-import { Player, PlayerInterface } from "../models";
+import { Player, PlayerInterface, PlayerRanking, PlayerRankingHashMap, RaceInfo } from "../models";
 import { PLAYER_MOCK } from "./playerMock";
 
 @Injectable({
@@ -8,16 +8,14 @@ import { PLAYER_MOCK } from "./playerMock";
 })
 export class RankingService {
     private players: Player[];
-    private raceList: {raceName: string, raceKey: string}[] = [];
+    private raceList: RaceInfo[] = [];
 
     constructor() {
         this.players = PLAYER_MOCK.map((player: PlayerInterface)=> new Player(player));
         this.raceList = this.getRaceListNames();
-
-        console.log(...new Set(this.players.map((player)=>player.team)))
     }
 
-    getRaceList(): {raceName: string, raceKey: string}[] {
+    getRaceList(): RaceInfo[] {
         return this.raceList;        
     }
 
@@ -35,15 +33,31 @@ export class RankingService {
         return this.players.find((player: Player)=> player._id === playerId);
     }
 
-    private getRaceListNames(): {raceName: string, raceKey: string}[]{
-        const races: {raceName: string, raceKey: string}[] = [];
+    getPlayerRanking(playerId: string): PlayerRankingHashMap {
+        const playerRankingHashMap: PlayerRankingHashMap = {};
+
+        this.raceList.forEach((race: RaceInfo)=>{
+            const players: Player[] = this.getPlayers('ASC', race.key);
+
+            playerRankingHashMap[race.key] = {
+                raceKey: race.key, 
+                bestTimeInSeconds: players[0].races[race.key].timeInSeconds,
+                ranking: players.findIndex((player: Player)=>player._id === playerId) + 1
+            };
+        });
+
+        return playerRankingHashMap;
+    }
+
+    private getRaceListNames(): RaceInfo[]{
+        const races: RaceInfo[] = [];
         
         this.players.forEach((player: Player)=>{
             return Object.keys(player.races).map((raceKey: string) => {
-                const raceIndex: number = races.findIndex((race: {raceName: string, raceKey: string})=> race.raceKey === raceKey);
+                const raceIndex: number = races.findIndex((race: RaceInfo)=> race.key === raceKey);
 
                 if(raceIndex === -1) {
-                    races.push({raceName: player.races[raceKey].name, raceKey: raceKey});
+                    races.push({name: player.races[raceKey].name, key: raceKey});
                 }
             });
         });
@@ -51,11 +65,11 @@ export class RankingService {
         return races.sort(this.sortRaces);
     }
 
-    private sortRaces(raceA: {raceName: string, raceKey: string}, raceB: {raceName: string, raceKey: string}) {
-        if ( raceA.raceKey < raceB.raceKey ){
+    private sortRaces(raceA: RaceInfo, raceB: RaceInfo) {
+        if ( raceA.key < raceB.key ){
             return -1;
         }
-        if ( raceA.raceKey > raceB.raceKey){
+        if ( raceA.key > raceB.key){
             return 1;
         }
         return 0;

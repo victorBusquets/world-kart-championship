@@ -12,12 +12,16 @@ export class GlobalRankingPlayerComponent implements OnInit {
 	@Input() player!: Player;
 	@Input() ranking!: number;
 	@Input() bestTime!: number;
-	playerTimeInSeconds: number = 0;
+	@Input() detailMode!: boolean;
+	@Input() reducedInfo!: boolean;
+	@Input() playerTimeInSeconds!: number;
 
 	constructor(private router: Router) {}
 
 	ngOnInit(): void {
-		this.playerTimeInSeconds = this.player.races[GLOBAL_RANKING_KEY].timeInSeconds;
+		if (!this.playerTimeInSeconds) {
+			this.playerTimeInSeconds = this.player.races[GLOBAL_RANKING_KEY].timeInSeconds;
+		}
 	}
 	
 	goToPlayerDetail(playerId: string): void {

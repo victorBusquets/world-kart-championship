@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Player } from 'src/app/models';
+import { Player, RaceInfo } from 'src/app/models';
 import { RankingService } from 'src/app/services/ranking.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 })
 export class SummaryRaceRankingComponent implements OnInit {
 	@Input() raceKey!: string;
-	raceList: {raceName: string, raceKey: string}[];
+	raceList: RaceInfo[];
 	players: Player[] = [];
 	bestTimeInSeconds: number = 0;
 	raceTitle: string = '';
@@ -25,8 +25,8 @@ export class SummaryRaceRankingComponent implements OnInit {
 	}
 
 	private setRaceTitle(): void{
-		this.raceTitle = this.raceList.find((raceInfo: {raceName: string, raceKey: string})=>{
-			return raceInfo.raceKey === this.raceKey;
-		})?.raceName || '';
+		this.raceTitle = this.raceList.find((raceInfo: RaceInfo)=>{
+			return raceInfo.key === this.raceKey;
+		})?.name || '';
 	}
 }

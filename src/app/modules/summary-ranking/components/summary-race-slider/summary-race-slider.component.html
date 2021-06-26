@@ -1,5 +1,5 @@
 <ng-container *ngFor="let race of raceList">
     <app-summary-race-ranking class="summary-race-ranking"
-        [ngClass]="{'summary-race-ranking--visible': currentRaceKey === race.raceKey, 'summary-race-ranking--next-option': nextRaceKey === race.raceKey}"
-        [raceKey]="race.raceKey"></app-summary-race-ranking>
+        [ngClass]="{'summary-race-ranking--visible': currentRaceKey === race.key, 'summary-race-ranking--next-option': nextRaceKey === race.key}"
+        [raceKey]="race.key"></app-summary-race-ranking>
 </ng-container>

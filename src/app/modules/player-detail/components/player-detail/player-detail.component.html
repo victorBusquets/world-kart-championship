@@ -1,12 +1,18 @@
-<div class="page-spacing text-center">
-    <ng-container *ngIf="player">
-        <img [src]="player.picture" [alt]="player.name">
-        <p class="m-0">{{player.name}}</p>
-        <app-team-logo class="d-inline-block my-3" [team]="player.team"></app-team-logo>
-
-        <div class="mt-4">
-            {{player | json}}
-        </div>
-    </ng-container>
-
+<div class="page-spacing">
+    <div class="grid-container">
+        <ng-container *ngIf="player && raceList && playerRanking">
+            <ng-container *ngFor="let race of raceList; let i = index">
+                <div [ngClass]="{'column-12 mb-4': i === 0, 'column-4 column-md-6 column-sm-12': i > 0}">
+                    <app-title [title]="race.name"></app-title>
+                    <app-global-ranking-player class="d-block mt-2 mb-4"
+                        [detailMode]="true"
+                        [reducedInfo]="i > 0"
+                        [player]="player"
+                        [playerTimeInSeconds]="player.races[race.key].timeInSeconds"
+                        [ranking]="playerRanking[race.key].ranking"
+                        [bestTime]="playerRanking[race.key].bestTimeInSeconds"></app-global-ranking-player>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
 </div>
