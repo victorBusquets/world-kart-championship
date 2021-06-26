@@ -2,12 +2,8 @@ import { PlayerInterface } from "./player.interface";
 import { RaceInterface } from "./race.interface";
 import { Race } from "./race.class";
 import { StringUtils, TimeUtils } from "../utils";
-import { GLOBAL_RANKING_KEY } from "../constants";
-
-interface RaceHashMap {
-    [details: string] : Race;
-} 
-
+import { GLOBAL_RANKING_KEY, GLOBAL_RANKING_NAME } from "../constants";
+import { RaceHashMap } from ".";
 export class Player {
     _id: string;
     picture: string;
@@ -51,7 +47,7 @@ export class Player {
         const totalTime: string = TimeUtils.getTimeFromSeconds(totalTimeInSeconds);
 
         const globalRanking: Race = new Race({
-            name: 'Posicion global',
+            name: GLOBAL_RANKING_NAME,
             time: totalTime
         });
 
