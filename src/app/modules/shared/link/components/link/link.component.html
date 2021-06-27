@@ -1,0 +1,5 @@
+<a class="link d-block mx-2"
+    [ngClass]="{'link--dark-mode': darkMode}"
+    [routerLink]="linkConfig.routerLink"
+    [routerLinkActiveOptions]="{exact: !linkConfig.notExact}"    
+    [routerLinkActive]="'link--active-route'">{{linkConfig.text}}</a>

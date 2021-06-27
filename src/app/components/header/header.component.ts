@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { APP_ROUTES } from 'src/app/constants';
+import { LinkConfig } from 'src/app/models';
 
 @Component({
 	selector: 'app-header',
@@ -7,6 +8,19 @@ import { APP_ROUTES } from 'src/app/constants';
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-	appRoutes = APP_ROUTES;
 	menuOpen!: boolean;
+	links: LinkConfig[] = [
+		{
+			routerLink: ['/'],
+			text: 'Inicio'
+		},
+		{
+			routerLink: ['/', APP_ROUTES.summaryRanking],
+			text: 'Resumen clasificación'
+		}
+	];
+	
+	toggleMenu(): void{
+		this.menuOpen = !this.menuOpen;
+	}
 }

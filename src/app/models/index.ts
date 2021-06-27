@@ -6,3 +6,4 @@ export * from './playerRanking.interface';
 export * from './raceInfo.interface';
 export * from './raceHashMap.interface';
 export * from './playerRankingHashMap.interface';
+export * from './linkConfig.interface';

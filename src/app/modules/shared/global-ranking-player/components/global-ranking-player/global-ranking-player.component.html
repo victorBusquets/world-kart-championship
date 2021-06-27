@@ -9,7 +9,7 @@
         </div>
         <p class="m-0 mb-1 player__name" [ngClass]="{'column-3 column-md-4 column-sm-6 mt-5': detailMode}" *ngIf="!reducedInfo">{{player.name}}</p>
 
-        <app-team-logo class="d-inline-block my-2 text-center" [ngClass]="{'column-3 column-md-4 column-sm-6 mt-5': detailMode}" [team]="player.team"  *ngIf="!reducedInfo"></app-team-logo>
-        <app-time-difference [ngClass]="{'d-inline-block mt-2': detailMode, 'column-4 column-md-12 column-sm-6': detailMode && !reducedInfo, 'column-8': detailMode && reducedInfo}" [bestTime]="bestTime" [playerTime]="playerTimeInSeconds"></app-time-difference>
+        <app-team-logo class="d-inline my-2 text-center" [ngClass]="{'column-3 column-md-4 column-sm-6 mt-5': detailMode}" [team]="player.team"  *ngIf="!reducedInfo"></app-team-logo>
+        <app-time-difference [ngClass]="{'d-inline mt-2': detailMode, 'column-4 column-md-12 column-sm-6': detailMode && !reducedInfo, 'column-8': detailMode && reducedInfo}" [bestTime]="bestTime" [playerTime]="playerTimeInSeconds"></app-time-difference>
     </div>
 </div>

@@ -1,0 +1,53 @@
+.link{
+    color: black;
+    // color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 14px;
+    position: relative;
+
+    &.link--dark-mode{
+        color: white;
+
+        
+        &::before{
+            background: white;
+        }
+
+        &.link--active-route{
+            &:before{
+                background-color: rgb(173, 173, 173);
+            }
+        }
+    }
+    
+    &:hover{
+        text-decoration: none;
+        font-weight: bold;
+
+        &:before{
+            width: 100%;
+        }
+    }
+
+    &:before{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: black;
+        // background: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all .2s;
+    }
+
+    &.link--active-route{
+        &:before{
+            background-color: rgb(133, 133, 133);
+            width: 100%;
+        }
+    }
+}

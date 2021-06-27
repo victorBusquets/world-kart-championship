@@ -1,26 +1,28 @@
 <div class="page-spacing py-2 header">
     <div class="resolution-limiter header__content">
-        <div class="header__content__logo px-3 d-inline-block" [routerLink]="['/']"
+        <div class="header__content__logo px-3 d-inline" [routerLink]="['/']"
             [routerLinkActiveOptions]="{exact:true}"    
             [routerLinkActive]="'header__content__logo--active-route'">
             
-            <img class="header__content__logo__image d-inline-block" src="./assets/logo.png" alt="logo">
-            <h1 class="pl-2 m-0 header__content__logo__title d-inline-block">World kart championship!</h1>
+            <img class="header__content__logo__image d-inline" src="./assets/logo.png" alt="logo">
+            <h1 class="pl-2 m-0 header__content__logo__title d-inline">World Kart Championship!</h1>
         </div>
+
         <div class="d-sm-none">
-            <a class="header__content__link mx-2"
-                [routerLink]="['/']"
-                [routerLinkActiveOptions]="{exact:true}"    
-                [routerLinkActive]="'header__content__link--active-route'">Inicio</a>
-            <a class="header__content__link mx-2"
-                [routerLink]="['/', appRoutes.summaryRanking]"
-                [routerLinkActiveOptions]="{exact:true}"    
-                [routerLinkActive]="'header__content__link--active-route'">Resumen clasificación</a>
+            <app-link class="d-inline" *ngFor="let link of links" [linkConfig]="link"></app-link>
         </div>
-        <div class="d-none d-sm-inline header__content__menu" [ngClass]="{'header__content__menu--open': menuOpen}" (click)="menuOpen = !menuOpen">
+
+        <div class="d-none d-sm-inline header__content__menu" [ngClass]="{'header__content__menu--open': menuOpen}" (click)="toggleMenu()">
 			<div class="header__content__menu__line header__content__menu__line--first"></div>
 			<div class="header__content__menu__line header__content__menu__line--middle"></div>
 			<div class="header__content__menu__line header__content__menu__line--last"></div>
         </div>
+
     </div>
 </div>
+
+<nav class="mobile-menu" [ngClass]="{'mobile-menu--open': menuOpen}" (click)="toggleMenu()">
+    <div class="mobile-menu__content page-spacing">
+        <app-link class="d-block text-center my-4 mx-3" *ngFor="let link of links" [linkConfig]="link" [darkMode]="true"></app-link>  
+    </div>
+</nav>

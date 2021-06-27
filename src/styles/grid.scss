@@ -12,18 +12,6 @@
     }
 }
 
-@mixin generateDisplayModes($size-name) {
-    @for $i from 1 through $number-of-columns {
-        .d#{$size-name}-none{
-            display: none;
-        }
-
-        .d#{$size-name}-inline{
-            display: inline-block;
-        }
-    }
-}
-
 // Generate grid system
 .grid-container {
     display: grid;
@@ -64,18 +52,4 @@
     @include for-phone{
         @include generateColumns('xs');
     }
-}
-
-@include generateDisplayModes('');
-
-@include for-tablet-landscape{
-    @include generateDisplayModes('-md');
-}
-
-@include for-tablet-portrait{
-    @include generateDisplayModes('-sm');
-}
-
-@include for-phone{
-    @include generateDisplayModes('-xs');
 }

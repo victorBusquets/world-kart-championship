@@ -1,6 +1,7 @@
 @import './styles/variables.scss';
 @import './styles/grid.scss';
 @import './styles/spacing.scss';
+@import './styles/display-options.scss';
 
 body{
     margin: 0;
@@ -21,15 +22,19 @@ body{
     margin: 0 auto;
 }
 
-.d-block{
-    display: block;
-}
-
-.d-inline-block{
-    display: inline-block;
-    vertical-align: top
-}
-
 .text-center{
     text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 2.5px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(228, 228, 228);
 }

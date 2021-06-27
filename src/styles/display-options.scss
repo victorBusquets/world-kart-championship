@@ -1,0 +1,33 @@
+@import './media-queries.scss';
+
+@mixin generateDisplayModes($size-name) {
+    @for $i from 1 through $number-of-columns {
+        .d#{$size-name}-none{
+            display: none;
+        }
+
+        .d#{$size-name}-inline{
+            display: inline-block;
+            vertical-align: top
+        }
+
+        
+        .d#{$size-name}-block{
+            display: block;
+        }
+    }
+}
+
+@include generateDisplayModes('');
+
+@include for-tablet-landscape{
+    @include generateDisplayModes('-md');
+}
+
+@include for-tablet-portrait{
+    @include generateDisplayModes('-sm');
+}
+
+@include for-phone{
+    @include generateDisplayModes('-xs');
+}
