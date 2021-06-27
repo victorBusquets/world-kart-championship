@@ -14,11 +14,11 @@ body{
 }
 
 .page-spacing{
-    padding: 20px 10px;
+    padding: 20px;
 }
 
 .resolution-limiter{
-    max-width: $resolution-limit;
+    max-width: $desktop-size;
     margin: 0 auto;
 }
 

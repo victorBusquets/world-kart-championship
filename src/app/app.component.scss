@@ -8,4 +8,28 @@ main{
     width: 100%;
     height: calc(100% - #{$header-size});
     overflow-y: auto;
+    background: url(/assets/background.png);
+    background-size: 25px;
+}
+
+.color{
+    width: 20px;
+    height: 20px;
+    display: inline;
+
+    &.primary{
+        background-color: $primary;
+    }
+    &.primary-lighter{
+        background-color: $primary-lighter;
+    }
+    &.primary-light{
+        background-color: $primary-light;
+    }
+    &.primary-dark{
+        background-color: $primary-dark;
+    }
+    &.primary-darker{
+        background-color: $primary-darker;
+    }
 }
