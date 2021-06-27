@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { GLOBAL_RANKING_KEY, GLOBAL_RANKING_NAME } from 'src/app/constants';
-import { Player } from 'src/app/models';
+import { RaceInfo } from 'src/app/models';
 import { RankingService } from 'src/app/services/ranking.service';
 
 @Component({
@@ -9,12 +8,10 @@ import { RankingService } from 'src/app/services/ranking.service';
 	styleUrls: ['./global-ranking.component.scss']
 })
 export class GlobalRankingComponent {
-	players: Player[];
-	bestTime: number;
-	title: string = GLOBAL_RANKING_NAME;
+	raceList: RaceInfo[];
+
 	
 	constructor(private rankingService: RankingService) {
-		this.players = this.rankingService.getPlayers();
-		this.bestTime = this.players[0].races[GLOBAL_RANKING_KEY].timeInSeconds;
+		this.raceList = this.rankingService.getRaceList();
 	}
 }

@@ -6,5 +6,6 @@
 
     &.title--sticky-mode{
         position: sticky;
+        z-index: 1;
     }
 }

@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { GlobalRankingPlayerModule, RankingModule, TeamLogoModule, TimeDifferenceModule, TitleModule } from '../shared';
 import { GlobalRankingRoutingModule } from './global-ranking-routing.module';
 import { GlobalRankingComponent } from './components/global-ranking/global-ranking.component';
+import { RankingResultComponent } from './components/ranking-result/ranking-result.component';
 
 @NgModule({
-	declarations: [GlobalRankingComponent],
+	declarations: [GlobalRankingComponent, RankingResultComponent],
 	imports: [
 		CommonModule,
 		GlobalRankingRoutingModule,

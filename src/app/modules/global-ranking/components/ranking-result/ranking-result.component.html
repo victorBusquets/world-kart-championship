@@ -1,0 +1,10 @@
+<div class="page-spacing">
+    <app-title [title]="raceTitle" [stickyMode]="true"></app-title>
+    <div class="grid-container results">
+        <app-global-ranking-player *ngFor="let player of players; let i = index"
+            class="column-4 column-md-6 column-xs-12 results__player text-center"
+            [ranking]="i+1"
+            [bestTime]="bestTimeInSeconds"
+            [player]="player"></app-global-ranking-player>
+    </div>
+</div>
