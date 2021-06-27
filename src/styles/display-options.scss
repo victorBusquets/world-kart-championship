@@ -15,10 +15,23 @@
         .d#{$size-name}-block{
             display: block;
         }
+
+        .p#{$size-name}-0{
+            padding: 0 !important;
+        }
+
+        .m#{$size-name}-0{
+            margin: 0 !important;
+        }
     }
 }
 
 @include generateDisplayModes('');
+
+@include for-desktop{
+    @include generateDisplayModes('-lg');
+}
+
 
 @include for-tablet-landscape{
     @include generateDisplayModes('-md');

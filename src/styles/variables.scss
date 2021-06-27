@@ -3,4 +3,17 @@ $spacing-levels: 5;
 $padding-size: 5px;
 
 $header-size: 42px;
-$resolution-limit: 1200px;
+
+$big-desktop-size: 1800px;
+$desktop-size: 1200px;
+$tablet-landscape-size: 975px;
+$tablet-portrait-size: 675px;
+$phone-size: 599px;
+
+$primary: #68b9ff;
+$primary-lighter: lighten($primary, 28);
+$primary-light-medium: lighten($primary, 22);
+$primary-light: lighten($primary, 15);
+$primary-dark: darken($primary, 25);
+$primary-dark-medium: darken($primary, 40);
+$primary-darker: darken($primary, 50);
