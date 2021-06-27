@@ -1,6 +1,16 @@
+@import '../../../../../styles/variables.scss';
+
 app-summary-race-slider{
     display: block;
     height: 690px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 75%);
+    border-radius: 0 0 5px 5px;
+}
+
+.summary-ranking{
+    background-color: $primary-lighter;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 75%);
+    border-radius: 0 0 5px 5px;
 }

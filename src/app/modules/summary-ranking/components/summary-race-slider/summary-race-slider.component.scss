@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     transition: all .5s ease-out;
-    opacity: 0;
+    opacity: .5;
 
     &.summary-race-ranking--visible{
         position: absolute;

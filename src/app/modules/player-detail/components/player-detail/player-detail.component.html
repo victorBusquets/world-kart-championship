@@ -1,9 +1,9 @@
-<div class="page-spacing">
-    <div class="grid-container">
-        <ng-container *ngIf="player && raceList && playerRanking">
-            <ng-container *ngFor="let race of raceList; let i = index">
-                <div [ngClass]="{'column-12 mb-4': i === 0, 'column-4 column-md-6 column-sm-12': i > 0}">
-                    <app-title [title]="race.name"></app-title>
+<div class="grid-container mt-4 px-0 m-lg-0">
+    <ng-container *ngIf="player && raceList && playerRanking">
+        <ng-container *ngFor="let race of raceList; let i = index">
+            <div [ngClass]="{'column-12 mb-4': i === 0, 'column-4 column-md-6 column-sm-12': i > 0}">
+                <app-title [title]="race.name"></app-title>
+                <div class="page-spacing">
                     <app-global-ranking-player class="d-block mt-2 mb-4"
                         [detailMode]="true"
                         [reducedInfo]="i > 0"
@@ -12,7 +12,7 @@
                         [ranking]="playerRanking[race.key].ranking"
                         [bestTime]="playerRanking[race.key].bestTimeInSeconds"></app-global-ranking-player>
                 </div>
-            </ng-container>
+            </div>
         </ng-container>
-    </div>
+    </ng-container>
 </div>

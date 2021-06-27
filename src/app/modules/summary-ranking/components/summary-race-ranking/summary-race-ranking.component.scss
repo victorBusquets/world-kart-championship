@@ -1,10 +1,17 @@
-.player{
-    .player__picture{
-        width: 35px;
+@import '../../../../../styles/variables.scss';
+
+.summary-race-ranking{
+    background-color: $primary-lighter;
+
+    .summary-race-ranking__player{
+        .summary-race-ranking__player__picture{
+            width: 35px;
+        }
+
+        .summary-race-ranking__player__name,
+        .summary-race-ranking__player__time-difference{
+            width: 150px;
+        }
     }
 
-    .player__name,
-    .player__time-difference{
-        width: 150px;
-    }
 }

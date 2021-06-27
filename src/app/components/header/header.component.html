@@ -9,7 +9,7 @@
         </div>
 
         <div class="d-sm-none">
-            <app-link class="d-inline" *ngFor="let link of links" [linkConfig]="link"></app-link>
+            <app-link class="d-inline" *ngFor="let link of links" [linkConfig]="link" [darkMode]="true"></app-link>
         </div>
 
         <div class="d-none d-sm-inline header__content__menu" [ngClass]="{'header__content__menu--open': menuOpen}" (click)="toggleMenu()">
@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<nav class="mobile-menu" [ngClass]="{'mobile-menu--open': menuOpen}" (click)="toggleMenu()">
+<nav class="mobile-menu d-none d-sm-block" [ngClass]="{'mobile-menu--open': menuOpen}" (click)="toggleMenu()">
     <div class="mobile-menu__content page-spacing">
-        <app-link class="d-block text-center my-4 mx-3" *ngFor="let link of links" [linkConfig]="link" [darkMode]="true"></app-link>  
+        <app-link class="d-block text-center my-2 mx-3" *ngFor="let link of links" [linkConfig]="link" [darkMode]="true"></app-link>  
     </div>
 </nav>

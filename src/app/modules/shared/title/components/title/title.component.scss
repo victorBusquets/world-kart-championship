@@ -1,6 +1,8 @@
+@import '../../../../../../styles/variables.scss';
+
 .title{
     top: 0px;
-    background: white;
+    background: $primary-light;
     padding: 5px;
     border-bottom: solid 1px;
 
