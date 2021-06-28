@@ -20,7 +20,7 @@ export class HeaderComponent {
 		}
 	];
 	
-	toggleMenu(): void{
-		this.menuOpen = !this.menuOpen;
+	toggleMenu(menuOpen?: boolean): void{
+		this.menuOpen = menuOpen !== undefined ? menuOpen : !this.menuOpen;
 	}
 }
