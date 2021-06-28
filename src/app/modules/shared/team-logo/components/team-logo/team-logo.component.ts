@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class TeamLogoComponent {
 	@Input() team!: string;
 	@Input() showOnlyIcon!: boolean;
-	teamClassName: string = '';
+	teamClassName!: string;
 
 	ngOnInit(): void{
 		this.teamClassName = 'team-' + this.team?.toLowerCase();

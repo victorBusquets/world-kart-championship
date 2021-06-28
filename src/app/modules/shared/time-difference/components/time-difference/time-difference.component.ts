@@ -9,8 +9,8 @@ import { TimeUtils } from 'src/app/utils';
 export class TimeDifferenceComponent implements OnInit {
 	@Input() bestTime!: number;
 	@Input() playerTime!: number;
-	playerTimeFormatted: string = '';
-	timeDifference: string = '';
+	playerTimeFormatted!: string;
+	timeDifference!: string;
 
 	ngOnInit(): void {
 		this.playerTimeFormatted = TimeUtils.getTimeFromSeconds(this.playerTime);

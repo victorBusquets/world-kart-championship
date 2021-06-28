@@ -10,7 +10,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 export class SummaryRaceRankingComponent implements OnInit {
 	@Input() raceKey!: string;
 	raceList: RaceInfo[];
-	players: Player[] = [];
+	players!: Player[];
 	bestTimeInSeconds!: number;
 	raceTitle!: string;
 

@@ -12,7 +12,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 export class PlayerDetailComponent implements OnDestroy {
 	raceList: RaceInfo[];
 	player: Player | undefined;
-	playerRanking: PlayerRankingHashMap = {};
+	playerRanking!: PlayerRankingHashMap;
 	private subscriptions: Subscription[] = [];
 
 	constructor(private activatedRoute: ActivatedRoute, private rankingService: RankingService) {
