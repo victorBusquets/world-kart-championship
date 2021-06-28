@@ -13,8 +13,9 @@ export class SummaryRaceSliderComponent implements OnDestroy {
 	intervalTime: number = 10;
 	raceList: RaceInfo[];
 	currentRaceIndex: number = 0;
-	currentRaceKey: string = '';
-	nextRaceKey: string = '';
+	currentRaceKey!: string;
+	nextRaceKey!: string;
+	private interval!: any;
 	private subscriptions: Subscription[] = [];
 
 	constructor(private rankingService: RankingService, private activatedRoute: ActivatedRoute) {
@@ -29,12 +30,13 @@ export class SummaryRaceSliderComponent implements OnDestroy {
 		);
 
 		this.setRaceKeys();
-		setInterval(()=>this.setRaceKeys(), this.intervalTime * 1000);
+		this.interval = setInterval(()=>this.setRaceKeys(), this.intervalTime * 1000);
 	}
 
 	
 	ngOnDestroy(): void {
 		this.subscriptions.forEach((subscription: Subscription) => subscription.unsubscribe());
+		clearInterval(this.interval);
 	}
 
 	private setRaceKeys(): void{

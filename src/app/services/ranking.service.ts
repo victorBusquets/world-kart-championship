@@ -33,11 +33,11 @@ export class RankingService {
         return this.players.find((player: Player)=> player._id === playerId);
     }
 
-    getPlayerRanking(playerId: string): PlayerRankingHashMap {
+    getPlayerRanking(playerId: string, order: 'ASC' | 'DESC' = 'ASC'): PlayerRankingHashMap {
         const playerRankingHashMap: PlayerRankingHashMap = {};
 
         this.raceList.forEach((race: RaceInfo)=>{
-            const players: Player[] = this.getPlayers('ASC', race.key);
+            const players: Player[] = this.getPlayers(order, race.key);
 
             playerRankingHashMap[race.key] = {
                 raceKey: race.key, 

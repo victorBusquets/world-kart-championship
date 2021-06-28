@@ -11,8 +11,8 @@ export class SummaryRaceRankingComponent implements OnInit {
 	@Input() raceKey!: string;
 	raceList: RaceInfo[];
 	players: Player[] = [];
-	bestTimeInSeconds: number = 0;
-	raceTitle: string = '';
+	bestTimeInSeconds!: number;
+	raceTitle!: string;
 
 	constructor(private rankingService: RankingService) {
 		this.raceList = this.rankingService.getRaceList();

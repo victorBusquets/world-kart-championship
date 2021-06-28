@@ -1,2 +1,2 @@
 <p class="player-time my-1">{{playerTimeFormatted}}</p>
-<p class="time-difference m-0" [ngClass]="{'time-difference--hidden': bestTime === playerTime}">+ {{timeDifference}}</p>
+<p class="time-difference m-0" [ngClass]="{'time-difference--hidden': bestTime === playerTime}">+ <span class="time-difference__value">{{timeDifference}}</span></p>
