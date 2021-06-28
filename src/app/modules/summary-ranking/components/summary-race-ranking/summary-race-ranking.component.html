@@ -4,7 +4,7 @@
         <app-ranking class="d-inline mr-2" [smallMode]="true" [ranking]="i+1"></app-ranking>
         <img class="summary-race-ranking__player__picture" [src]="player.picture" [alt]="player.name">
         <span class="d-inline mt-2 summary-race-ranking__player__name">{{player.name}}</span>
-        <app-team-logo class="d-inline mt-2" [team]="player.team" [onlyShowIcon]="true"></app-team-logo>
+        <app-team-logo class="d-inline mt-2" [team]="player.team" [showOnlyIcon]="true"></app-team-logo>
 
         <app-time-difference class="d-inline summary-race-ranking__player__time-difference" [bestTime]="bestTimeInSeconds"
             [playerTime]="player.races[raceKey].timeInSeconds"></app-time-difference>

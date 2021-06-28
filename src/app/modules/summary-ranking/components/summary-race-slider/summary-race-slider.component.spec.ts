@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 import { SummaryRaceSliderComponent } from './summary-race-slider.component';
 
 describe('SummaryRaceSliderComponent', () => {
@@ -7,7 +8,8 @@ describe('SummaryRaceSliderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [SummaryRaceSliderComponent]
+			declarations: [SummaryRaceSliderComponent],
+			imports: [RouterModule.forRoot([])]
 		}).compileComponents();
 	});
 

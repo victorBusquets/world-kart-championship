@@ -14,6 +14,10 @@ describe('LinkComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(LinkComponent);
 		component = fixture.componentInstance;
+		component.linkConfig = {
+			routerLink: ['/'],
+			text: 'text here'
+		};
 		fixture.detectChanges();
 	});
 

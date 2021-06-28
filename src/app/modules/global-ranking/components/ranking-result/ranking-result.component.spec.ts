@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { GLOBAL_RANKING_KEY } from 'src/app/constants';
 import { RankingResultComponent } from './ranking-result.component';
 
 describe('RankingResultComponent', () => {
@@ -14,6 +15,7 @@ describe('RankingResultComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(RankingResultComponent);
 		component = fixture.componentInstance;
+		component.raceKey = GLOBAL_RANKING_KEY;
 		fixture.detectChanges();
 	});
 
