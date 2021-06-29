@@ -1,0 +1,10 @@
+.collapsable__title{
+    cursor: pointer;
+}
+
+.collapsable{
+    .collapsable__content--collapsed{
+        overflow: hidden;
+        height: 0px;
+    }
+}

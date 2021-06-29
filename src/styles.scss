@@ -38,3 +38,18 @@ body{
 ::-webkit-scrollbar-track {
     background: rgb(228, 228, 228);
 }
+
+.icon-dropdown{
+    height: 16px;
+    width: 16px;
+    background: url(assets/arrow-down-sign-to-navigate.svg);
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &.icon-dropdown--rotate{
+        transform: rotate(
+            90deg
+            );
+    }
+}

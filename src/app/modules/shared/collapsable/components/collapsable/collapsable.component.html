@@ -1,0 +1,11 @@
+<div class="collapsable">
+    <app-title class="collapsable__title"
+        [title]="title"
+        [stickyMode]="true"
+        [icon]="collapsed ? 'icon-dropdown icon-dropdown--rotate' : 'icon-dropdown'"
+        (click)="toggleCollapse()"></app-title>
+
+    <div class="collapsable__content" [ngClass]="{'collapsable__content--collapsed': collapsed}">
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -10,4 +10,15 @@
         position: sticky;
         z-index: 1;
     }
+
+    &.title--has-icon{
+        display: flex;
+        -webkit-box-pack: justify!important;
+        -ms-flex-pack: justify!important;
+        justify-content: space-between!important;
+
+        .title__icon{
+            margin: 6px 13px;
+        }
+    }
 }

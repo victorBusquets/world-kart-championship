@@ -1,1 +1,4 @@
-<h3 class="title px-3 m-0" [ngClass]="{'title--sticky-mode': stickyMode}">{{title}}</h3>
+<h3 class="title px-3 m-0" [ngClass]="{'title--has-icon': icon, 'title--sticky-mode': stickyMode}">
+    <span class="title__content pt-1">{{title}}</span>
+    <i *ngIf="icon" class="title__icon" [ngClass]="icon"></i>
+</h3>

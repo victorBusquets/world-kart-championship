@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TitleComponent {
 	@Input() title!: string;
+	@Input() icon!: string;
 	@Input() stickyMode!: boolean;
 }
